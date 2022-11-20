@@ -1,10 +1,10 @@
-import '../css/common.css';
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
 const TIME_KEY = 'videoplayer-current-time';
 const iframe = document.querySelector('iframe');
-const player = new Vimeo.Player(iframe);
+const player = new Player(iframe);
+resumePlayback();
 
 const onPlay = function (data) {
   const strigifyData = JSON.stringify(data);
@@ -31,7 +31,5 @@ function resumePlayback() {
       });
   }
 }
-
-resumePlayback();
 
 console.log(iframe);
